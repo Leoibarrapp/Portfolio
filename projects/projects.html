@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="nav-group">
+            <a class="nav-item" href="../home/home.html">Home</a>
+            <a class="nav-item" href="../about/about.html">About Me</a>
+            <a class="nav-item active" href="../projects/projects.html">Projects</a>
+            <a class="nav-item" href="../contact/contact.html">Contact</a>
+        </div>
+
+        <div id="theme-toggle-button" onclick="toggleTheme()">
+            <img src="../assets/dark-mode-icon.svg" id="dark-mode-icon">
+            <img src="../assets/light-mode-icon.svg" id="light-mode-icon">
+        </div>
+
+    </div>
+
+
+    <div class="cards-container">
+        <div class="card">
+            <h1 class="card-title">ViajesUCAB</h1>
+            <p class="card-description">Online platform for booking trips, activities and managing reservations. </p>
+
+            <p class="card-full-description" hidden>
+                This has been one of my favorite projects to work on. It was a group project where we had to create a
+                web platform for booking trips, activities and managing reservations. We used Node.js for the
+                backend and PostgreSQL for the database.
+                <br> <br>
+                The system allows the users to register and login, validating the role of each user and the permissions
+                associated with their account. Admin users can create new roles specifically for certain things, giving
+                specific permissions and showing only the UIs that the user needs, personalizing the experience for each
+                role. Standard Client users can search for trips, activities and manage reservations. Admin users can
+                manage the trips, activities and reservations. In the admin dashboard, the admin can download reports
+                that are generated dinamically on PDF format, with information about the most popular services. This was
+                done using JsReports.
+            </p>
+            <img class="card-image" src="" hidden>
+        </div>
+        <div class=" card">
+            <h1 class="card-title">UCAB Place</h1>
+            <p class="card-description">E-commerce website made for the UCAB community. </p>
+
+            <p class="card-full-description" hidden>
+                This is an e-commerce website made specifically for the UCAB community, so that students can help each
+                other by selling and buying products. It allows students to register, login and talk to sellers. To do
+                this, we used a simple email verification system to verify that the vendors were in fact UCAB students.
+                <br> <br>
+                Once you are logged in, you can browse and search for products. When you find a product you like, you
+                can chat directly with the seller to ask questions or negotiate the price. This was done using Socket.IO
+                for real-time communication. When the order is confirmed, the buyer can review the seller and leave
+                a comment.
+                <br> <br>
+                The system also allows the vendors to manage their products and orders, changing the product info when
+                needed.
+            </p>
+            <img class="card-image" src="" hidden>
+        </div>
+        <div class="card">
+            <h1 class="card-title">Pixel UNO</h1>
+            <p class="card-description">Windows desktop application for playing UNO against the computer.</p>
+
+            <p class="card-full-description" hidden>
+                The classic UNO game made in a Windows desktop application. We used Java and JavaFX to create this
+                game, bringing our own style to it with the pixelated theme. We used Scene Builder to design the
+                interface, and data structures to create the game logic.
+                <br> <br>
+                The game allows you to play against the computer, with a simple and intuitive interface. You can
+                play with up to 4 players, and the game keeps track of the score that are saved in a JSON file,
+                allowing you to load and continue your game whenever you want.
+                <br> <br>
+                Each time you start a new game, you just say your name and the system will keep track of all your
+                previous games, showing all of the players stats and leaderboards.
+            </p>
+            <img class="card-asset" src="../assets/uno-game-img.png" alt="1" hidden>
+            <img class="card-asset" src="../assets/uno-game-img.png" alt="2" hidden>
+            <img class="card-asset" src="../assets/uno-game-img.png" alt="3" hidden>
+        </div>
+        <div class="card">
+            <h1 class="card-title">Battleship</h1>
+            <p class="card-description">Web application version of the classic Battleship to play with friends.</p>
+
+            <p class="card-full-description" hidden> </p>
+            <img class="card-image" src="" hidden>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="card-modal">
+            <div class="modal-content">
+                <h2 id="modal-title" class="modal-title">Title</h2>
+                <p id="modal-description" class="modal-description">Description</p>
+                <button class="modal-link-button" onclick="goToLink()">Check Repository</button>
+            </div>
+
+            <div class="modal-carousel-wrapper">
+                <button class="modal-carousel-button prev" onclick="prevSlide()">&#10094;</button>
+
+                <div class="modal-carousel-slides" id="modal-carousel-slides">
+                </div>
+
+                <button class="modal-carousel-button next" onclick="nextSlide()">&#10095;</button>
+                
+                <div class="modal-carousel-dots" id="modal-carousel-dots"></div>
+            </div>
+
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+    <script src="projects.js"></script>
+</body>
+
+</html>
