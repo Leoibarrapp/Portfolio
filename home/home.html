@@ -4,6 +4,10 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="home.css">
+    <script>
+        let initTheme = localStorage.getItem('theme') || "dark";
+        document.documentElement.setAttribute("data-theme", initTheme);
+    </script>
 </head>
 
 <body>
@@ -16,6 +20,7 @@
         </div>
 
         <div id="theme-toggle-button" onclick="toggleTheme()">
+            <div class="theme-toggle-thumb"></div>
             <img src="../assets/dark-mode-icon.svg" id="dark-mode-icon">
             <img src="../assets/light-mode-icon.svg" id="light-mode-icon">
         </div>
@@ -27,6 +32,7 @@
     </div>
 
     <script src="../script.js"></script>
+    <script src="home.js"></script>
 </body>
 
 </html>

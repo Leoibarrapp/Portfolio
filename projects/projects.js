@@ -30,7 +30,7 @@ cards.forEach(card => {
             newSlide.appendChild(clonedAsset);
 
             modalCarouselSlides.appendChild(newSlide);
-            
+
             // Create navigation dot
             const dot = document.createElement("span");
             dot.classList.add("carousel-dot");
@@ -40,7 +40,7 @@ cards.forEach(card => {
             });
             modalCarouselDots.appendChild(dot);
         });
-        
+
         // Hide prev/next buttons and dots if only 1 (or 0) images exist
         const carouselButtons = document.querySelectorAll(".modal-carousel-button");
         if (assets.length <= 1) {
@@ -51,14 +51,16 @@ cards.forEach(card => {
             modalCarouselDots.style.display = "flex";
         }
 
-        modal.style.display = "flex";
+        modal.classList.add("show");
 
         showSlides();
     });
 });
 
 function closeModal() {
-    modal.style.display = "none";
+    modal.classList.remove("show");
+    const videos = modal.querySelectorAll("video");
+    videos.forEach(video => video.pause());
 }
 
 modal.addEventListener("click", (e) => {
@@ -82,11 +84,17 @@ function showSlides() {
     }
     slides.forEach(slide => {
         slide.classList.remove("active");
+
+        // Ensure that any playing video gets paused when changing slides
+        const video = slide.querySelector("video");
+        if (video) {
+            video.pause();
+        }
     });
     dots.forEach(dot => {
         dot.classList.remove("active");
     });
-    
+
     slides[slideIndex].classList.add("active");
     if (dots.length > 0) {
         dots[slideIndex].classList.add("active");

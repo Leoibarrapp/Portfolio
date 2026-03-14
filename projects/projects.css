@@ -5,7 +5,7 @@
 }
 
 .modal-overlay {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +17,14 @@
     justify-content: center;
     align-items: center;
 
-    transition: 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .card-modal {
@@ -41,7 +48,13 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     transform: translateY(-20px);
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.modal-overlay.show .card-modal {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .close-btn {
@@ -128,16 +141,18 @@
     animation: fadeSlideIn 1s ease;
 }
 
-.modal-carousel-slide img {
+.modal-carousel-slide img,
+.modal-carousel-slide video {
     width: 100%;
     height: auto;
     display: block;
+    outline: none;
 }
 
 .modal-carousel-button {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 47.5%;
+    transform: translateY(-47.5%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;

@@ -4,6 +4,10 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="projects.css">
+    <script>
+        let initTheme = localStorage.getItem('theme') || "dark";
+        document.documentElement.setAttribute("data-theme", initTheme);
+    </script>
 </head>
 
 <body>
@@ -16,6 +20,7 @@
         </div>
 
         <div id="theme-toggle-button" onclick="toggleTheme()">
+            <div class="theme-toggle-thumb"></div>
             <img src="../assets/dark-mode-icon.svg" id="dark-mode-icon">
             <img src="../assets/light-mode-icon.svg" id="light-mode-icon">
         </div>
@@ -64,7 +69,7 @@
         </div>
         <div class="card">
             <h1 class="card-title">Pixel UNO</h1>
-            <p class="card-description">Windows desktop application for playing UNO against the computer.</p>
+            <p class="card-description">Desktop application for playing UNO against the computer, made for Windows.</p>
 
             <p class="card-full-description" hidden>
                 The classic UNO game made in a Windows desktop application. We used Java and JavaFX to create this
@@ -78,9 +83,8 @@
                 Each time you start a new game, you just say your name and the system will keep track of all your
                 previous games, showing all of the players stats and leaderboards.
             </p>
-            <img class="card-asset" src="../assets/uno-game-img.png" alt="1" hidden>
-            <img class="card-asset" src="../assets/uno-game-img.png" alt="2" hidden>
-            <img class="card-asset" src="../assets/uno-game-img.png" alt="3" hidden>
+            <img class="card-asset" src="../assets/uno-game-img.png" hidden>
+            <video class="card-asset" src="../assets/uno-game-video.mp4" hidden controls></video>
         </div>
         <div class="card">
             <h1 class="card-title">Battleship</h1>
@@ -106,7 +110,7 @@
                 </div>
 
                 <button class="modal-carousel-button next" onclick="nextSlide()">&#10095;</button>
-                
+
                 <div class="modal-carousel-dots" id="modal-carousel-dots"></div>
             </div>
 

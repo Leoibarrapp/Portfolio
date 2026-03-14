@@ -1,3 +1,19 @@
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:
+        radial-gradient(200px circle at var(--cursor-x, -100px) var(--cursor-y, -100px),
+            color-mix(in srgb, var(--primary-hover) 40%, transparent),
+            transparent 90%);
+    pointer-events: none;
+    z-index: -1;
+    transition: background 0.1s ease;
+}
+
 .home-container {
     display: flex;
     flex-direction: column;
