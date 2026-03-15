@@ -2,35 +2,43 @@
     --bg-dark: hsl(0 0% 10%);
     --bg: hsl(0 0% 15%);
     --bg-light: hsl(0 0% 25%);
-    --text: hsl(0 0% 95%);
-    --text-muted: hsl(0 0% 70%);
     --border: hsl(0 0% 30%);
     --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
-    --gradient-hover: linear-gradient(0deg, var(--bg-light), var(--bg));
+    --gradient-hover: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
     --highlight: hsl(0 0% 60%);
     --border-card: solid 1px var(--border);
+    --radius: 1rem;
     --shadow:
         inset 0 1px 2px #ffffff50,
         0 2px 4px #00000030,
         0 4px 8px #00000015;
 
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(0 0% 70%);
+    --text-dark: hsl(0 0% 5%);
+
     --primary: hsl(121, 74%, 43%);
-    --primary-hover: hsl(121, 94%, 43%);
+    --primary-light: hsl(121, 74%, 53%);
+    --primary-lightest: hsl(121, 74%, 63%);
+    --primary-dark: hsl(121, 74%, 23%);
+    --primary-darkest: hsl(121, 74%, 13%);
 
-    --border-card-hover: solid 1px var(--primary);
-
-    --radius: 1rem;
+    --accent: hsl(200, 85%, 38%);
+    --accent-light: hsl(200, 85%, 58%);
+    --accent-dark: hsl(200, 85%, 28%);
 }
 
 [data-theme="light"] {
     --bg-dark: hsl(0 0% 85%);
     --bg: hsl(0 0% 90%);
     --bg-light: hsl(0 0% 95%);
-    --text: hsl(0 0% 5%);
-    --text-muted: hsl(0 0% 30%);
 
     --highlight: hsl(0 0% 100%);
     --border-card: solid 1px var(--bg);
+
+    --text: hsl(0 0% 5%);
+    --text-muted: hsl(0 0% 30%);
+
 }
 
 .theme-transition,
@@ -82,7 +90,7 @@
 }
 
 #theme-toggle-button:hover .theme-toggle-thumb {
-    background: var(--primary-hover);
+    background: var(--primary-light);
 }
 
 body {
@@ -90,7 +98,12 @@ body {
     background-color: var(--bg-dark) !important;
     color: var(--text-muted);
 
-    margin: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -98,20 +111,53 @@ body {
 
 p {
     color: var(--text-muted);
+    text-align: justify;
+    margin: 0;
 }
 
-h1 {
+h1,
+h2 {
     color: var(--text);
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 button {
     padding: 0.75rem;
     border-radius: var(--radius);
-    margin-top: 1.5rem;
+
+    box-shadow: var(--shadow);
+    border: none;
+    border-top: solid 1px var(--highlight);
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-lightest);
+    border: 1px solid var(--primary);
+    color: var(--primary-darkest);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light) !important;
 }
 
 .nav-bar {
-    background: var(--bg);
+    background: var(--gradient);
     box-shadow: var(--shadow);
     border: var(--border-card);
     border-top: solid 1px var(--highlight);
@@ -148,16 +194,17 @@ button {
 .nav-bar .nav-item.active {
     color: var(--primary);
     background-color: var(--bg-light);
-    border-bottom-color: var(--primary);
+    border-bottom: 3px solid var(--primary);
 }
 
 .nav-bar .nav-item:hover:not(.active) {
     background-color: var(--bg-light);
     transform: translateY(-2px);
-    color: var(--primary-hover);
+    color: var(--primary-light);
 }
 
 .card {
+    /* background: var(--gradient); */
     background-color: var(--bg);
     box-shadow: var(--shadow);
     border: var(--border-card);
@@ -170,11 +217,13 @@ button {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease, transform 0.2s ease-in-out;
+
 }
 
 .card:hover {
     background-color: var(--bg-light);
+    /* background: var(--gradient-hover); */
     transform: translateY(-5px);
 }
 
@@ -184,7 +233,8 @@ button {
 }
 
 .card p,
-.card h1 {
+.card h1,
+.card h2 {
     margin: 0;
     text-align: justify;
     transition: color 0.2s ease-in-out;

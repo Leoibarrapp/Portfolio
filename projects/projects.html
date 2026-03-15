@@ -28,93 +28,229 @@
     </div>
 
 
-    <div class="cards-container">
-        <div class="card">
-            <h1 class="card-title">ViajesUCAB</h1>
-            <p class="card-description">Online platform for booking trips, activities and managing reservations. </p>
-
-            <p class="card-full-description" hidden>
-                This has been one of my favorite projects to work on. It was a group project where we had to create a
-                web platform for booking trips, activities and managing reservations. We used Node.js for the
-                backend and PostgreSQL for the database.
-                <br> <br>
-                The system allows the users to register and login, validating the role of each user and the permissions
-                associated with their account. Admin users can create new roles specifically for certain things, giving
-                specific permissions and showing only the UIs that the user needs, personalizing the experience for each
-                role. Standard Client users can search for trips, activities and manage reservations. Admin users can
-                manage the trips, activities and reservations. In the admin dashboard, the admin can download reports
-                that are generated dinamically on PDF format, with information about the most popular services. This was
-                done using JsReports.
+    <div class="main-container">
+        <div class="page-header">
+            <h1>Projects</h1>
+            <p>
+                Here you can find some of my projects, both academic and professional. I have worked on a variety of
+                projects, in different devices and platforms.
             </p>
-            <img class="card-image" src="" hidden>
         </div>
-        <div class=" card">
-            <h1 class="card-title">UCAB Place</h1>
-            <p class="card-description">E-commerce website made for the UCAB community. </p>
 
-            <p class="card-full-description" hidden>
-                This is an e-commerce website made specifically for the UCAB community, so that students can help each
-                other by selling and buying products. It allows students to register, login and talk to sellers. To do
-                this, we used a simple email verification system to verify that the vendors were in fact UCAB students.
-                <br> <br>
-                Once you are logged in, you can browse and search for products. When you find a product you like, you
-                can chat directly with the seller to ask questions or negotiate the price. This was done using Socket.IO
-                for real-time communication. When the order is confirmed, the buyer can review the seller and leave
-                a comment.
-                <br> <br>
-                The system also allows the vendors to manage their products and orders, changing the product info when
-                needed.
-            </p>
-            <img class="card-image" src="" hidden>
-        </div>
-        <div class="card">
-            <h1 class="card-title">Pixel UNO</h1>
-            <p class="card-description">Desktop application for playing UNO against the computer, made for Windows.</p>
+        <div class="cards-container">
+            <div class="card work-badge">
+                <h1 class="card-title">Onduven</h1>
+                <p class="card-description">Website for a Venezuelan company with an integrated chatbot.</p>
 
-            <p class="card-full-description" hidden>
-                The classic UNO game made in a Windows desktop application. We used Java and JavaFX to create this
-                game, bringing our own style to it with the pixelated theme. We used Scene Builder to design the
-                interface, and data structures to create the game logic.
-                <br> <br>
-                The game allows you to play against the computer, with a simple and intuitive interface. You can
-                play with up to 4 players, and the game keeps track of the score that are saved in a JSON file,
-                allowing you to load and continue your game whenever you want.
-                <br> <br>
-                Each time you start a new game, you just say your name and the system will keep track of all your
-                previous games, showing all of the players stats and leaderboards.
-            </p>
-            <img class="card-asset" src="../assets/uno-game-img.png" hidden>
-            <video class="card-asset" src="../assets/uno-game-video.mp4" hidden controls></video>
-        </div>
-        <div class="card">
-            <h1 class="card-title">Battleship</h1>
-            <p class="card-description">Web application version of the classic Battleship to play with friends.</p>
-
-            <p class="card-full-description" hidden> </p>
-            <img class="card-image" src="" hidden>
-        </div>
-    </div>
-
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="card-modal">
-            <div class="modal-content">
-                <h2 id="modal-title" class="modal-title">Title</h2>
-                <p id="modal-description" class="modal-description">Description</p>
-                <button class="modal-link-button" onclick="goToLink()">Check Repository</button>
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+                        Ondulados de Venezuela (Onduven) is a Venezuelan company that specializes in the production of
+                        cardboard
+                        boxes and its designs. They have been in the market for over 45 years and they wanted to renew
+                        their
+                        image and create a platform where their clients would have a good experience browsing their
+                        products and services.
+                        <br> <br>
+                        The website has a simple and intuitive interface, with a chatbot integrated in the website to
+                        answer the clients' most common questions and offer their contact info. The chatbot was done
+                        with
+                        Botpress.
+                    </p>
+                    <video class="card-asset" controls src="../assets/videos/onduven.mp4"></video>
+                    <img class="card-asset" src="../assets/images/onduven.png">
+                    <a href="https://onduven.com/" class="card-link-button">Visit Website</a>
+                </div>
             </div>
 
-            <div class="modal-carousel-wrapper">
-                <button class="modal-carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <div class="card work-badge">
+                <h1 class="card-title">ISOC VE</h1>
+                <p class="card-description">Website for the Venezuelan Internet Society chapter.</p>
 
-                <div class="modal-carousel-slides" id="modal-carousel-slides">
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+                        The Internet Society is a non-profit organization that works to promote the development and use
+                        of
+                        the Internet. In has 'chapters' all around the world, and the Venezuelan chapter is one of them.
+                        <br> <br>
+                        The website has a simple and modern interface, adapted to the organization's branding. It allows
+                        users to learn about the organization, its mission, vision, values, and the work it does in
+                        Venezuela, centralizing all their information in one place. In the website you can check out all
+                        the
+                        activities, news and it provides all the contact information for the organization, including a
+                        step-by-step guide on how to become a member.
+                    </p>
+                    <img class="card-asset" src="../assets/images/isocve-1.png">
+                    <img class="card-asset" src="../assets/images/isocve-2.png">
+                    <a href="https://isocve.org/" class="card-link-button">Visit Website</a>
+                </div>
+            </div>
+
+            <div class="card academic-badge">
+                <h1 class="card-title">ViajesUCAB</h1>
+                <p class="card-description">Online platform for booking trips, activities and managing reservations.
+                </p>
+
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+                        This has been one of my favorite projects to work on. It was a group project where we had to
+                        create
+                        a web platform for booking trips, activities and managing reservations. We used Node.js for the
+                        backend and PostgreSQL for the database.
+                        <br> <br>
+                        The system allows the users to register and login, validating the role of each user and the
+                        permissions associated with their account. Admin users can create new roles specifically for
+                        certain
+                        things, giving specific permissions and showing only the UIs that the user needs, personalizing
+                        the
+                        experience for each role. Standard Client users can search for trips, activities and manage
+                        reservations. Admin users can manage the trips, activities and reservations. In the admin
+                        dashboard,
+                        the admin can download reports that are generated dynamically on PDF format, with information
+                        about
+                        the most popular services. This was done using JsReports.
+                    </p>
+                    <img class="card-image" src="">
+                    <a href="" class="card-link-button"></a>
+                </div>
+            </div>
+
+            <div class="card academic-badge">
+                <h1 class="card-title">UCAB Place</h1>
+                <p class="card-description">E-commerce website made for the UCAB community. </p>
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+                        This is an e-commerce website made specifically for the UCAB community, so that students can
+                        help
+                        each
+                        other by selling and buying products. It allows students to register, login and talk to sellers.
+                        To
+                        do
+                        this, we used a simple email verification system to verify that the vendors were in fact UCAB
+                        students.
+                        <br> <br>
+                        Once you are logged in, you can browse and search for products. When you find a product you
+                        like,
+                        you
+                        can chat directly with the seller to ask questions or negotiate the price. This was done using
+                        Socket.IO
+                        for real-time communication. When the order is confirmed, the buyer can review the seller and
+                        leave
+                        a comment.
+                        <br> <br>
+                        The system also allows the vendors to manage their products and orders, changing the product
+                        info
+                        when
+                        needed.
+                    </p>
+                    <img class="card-asset" src="">
+                </div>
+            </div>
+
+            <div class="card academic-badge">
+                <h2 class="card-title">Futuristic Battleship</h2>
+                <p class="card-description">Web version of the classic Battleship game with a tournament system.</p>
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+
+                    </p>
+                    <img class="card-image" src="">
+                    <a href="" class="card-link-button"></a>
+                </div>
+            </div>
+
+            <div class="card academic-badge">
+                <h1 class="card-title">Pixel UNO</h1>
+                <p class="card-description">Desktop application for playing UNO against the computer.</p>
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+                        The classic UNO game made in a Windows desktop application. We used Java and JavaFX to create
+                        this
+                        game, bringing our own style to it with the pixelated theme. We used Scene Builder to design the
+                        interface, and advanced data structures to create the game logic.
+                        <br> <br>
+                        The game allows you to play against the computer, with a simple and intuitive interface. The
+                        game
+                        keeps track of the score that are saved in a JSON file, allowing you to load and continue your
+                        game
+                        whenever you want. You can see all the stats of all the players, including the leaderboards, in
+                        the
+                        stats section.
+                    </p>
+                    <img class="card-asset" src="../assets/images/uno-game-img.png">
+                    <video class="card-asset" src="../assets/videos/uno-game-video.mp4" controls></video>
+                    <a href="https://github.com/Leoibarrapp/uno-game-gui.git" class="card-link-button">Check
+                        Repository!</a>
+                </div>
+            </div>
+
+
+            <div class="card work-badge">
+                <h2 class="card-title">Cold & Hot Zone</h2>
+                <p class="card-description">Android applications that communicate in real time.
+                </p>
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+
+                    </p>
+                    <img class="card-image" src="">
+                    <a href="" class="card-link-button"></a>
+                </div>
+            </div>
+
+
+            <div class="card academic-badge">
+                <h1 class="card-title">Eternals</h1>
+                <p class="card-description">Wizard-themed videogame that can be played in the Windows terminal.</p>
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+
+                    </p>
+                    <img class="card-image" src="">
+                    <a href="" class="card-link-button"></a>
+                </div>
+            </div>
+
+            <div class="card academic-badge">
+                <h1 class="card-title">Jokes API</h1>
+                <p class="card-description">Simple REST API for posting, editing and getting jokes.</p>
+
+                <div class="hidden-content" hidden>
+                    <p class="card-full-description">
+
+                    </p>
+                    <img class="card-image" src="">
+                    <a href="" class="card-link-button"></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-overlay" class="modal-overlay">
+            <div class="card-modal">
+                <div class="modal-content">
+                    <h2 id="modal-title" class="modal-title">Title</h2>
+                    <p id="modal-description" class="modal-description">Description</p>
+                    <button id="modal-link-button" class="modal-link-button btn-primary">Check Repository</button>
                 </div>
 
-                <button class="modal-carousel-button next" onclick="nextSlide()">&#10095;</button>
+                <div class="modal-carousel-wrapper">
+                    <button class="modal-carousel-button prev" onclick="prevSlide()">&#10094;</button>
 
-                <div class="modal-carousel-dots" id="modal-carousel-dots"></div>
+                    <div class="modal-carousel-slides" id="modal-carousel-slides">
+                    </div>
+
+                    <button class="modal-carousel-button next" onclick="nextSlide()">&#10095;</button>
+
+                    <div class="modal-carousel-dots" id="modal-carousel-dots"></div>
+                </div>
+
+                <span class="close-btn" onclick="closeModal()">&times;</span>
             </div>
-
-            <span class="close-btn" onclick="closeModal()">&times;</span>
         </div>
     </div>
 

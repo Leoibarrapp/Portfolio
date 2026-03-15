@@ -2,6 +2,7 @@ const themeToggle = document.getElementById('theme-toggle-checkbox');
 const darkIcon = document.getElementById('dark-mode-icon');
 const lightIcon = document.getElementById('light-mode-icon');
 
+//obtiene el tema actual del localStorage
 let currentTheme = localStorage.getItem('theme');
 if (!currentTheme) {
     currentTheme = "dark";
@@ -9,6 +10,7 @@ if (!currentTheme) {
 }
 document.documentElement.setAttribute("data-theme", currentTheme);
 
+//cambia el tema del sitio web segun el activo
 function toggleTheme() {
     currentTheme = localStorage.getItem('theme');
 

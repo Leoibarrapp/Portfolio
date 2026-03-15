@@ -31,7 +31,7 @@
     max-width: 80%;
     max-height: 80%;
     width: 60%;
-    height: 60%;
+    height: fit-content;
     overflow: hidden;
 
     display: flex;
@@ -81,7 +81,7 @@
 .card-modal .modal-carousel-wrapper {
     width: 50%;
     height: 100%;
-    overflow: hidden;
+    overflow: visible;
     border-radius: var(--radius);
     display: flex;
     justify-content: center;
@@ -118,7 +118,7 @@
 }
 
 .card-modal .modal-link-button:hover {
-    background-color: var(--primary-hover);
+    background-color: var(--primary-light);
 }
 
 
@@ -151,12 +151,12 @@
 
 .modal-carousel-button {
     position: absolute;
-    top: 47.5%;
-    transform: translateY(-47.5%);
+    top: 50%;
+    transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 4px 10px;
     cursor: pointer;
     font-size: 18px;
     z-index: 10;
@@ -190,7 +190,7 @@
 
 .modal-carousel-dots {
     position: absolute;
-    bottom: 0;
+    bottom: -1.25rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -212,4 +212,61 @@
 .carousel-dot.active {
     background-color: var(--text);
     opacity: 1;
+}
+
+
+.card {
+    position: relative;
+}
+
+.card.academic-badge {
+    border-left: solid 4px var(--primary);
+}
+
+.card.work-badge {
+    border-left: solid 4px var(--accent);
+}
+
+.card.academic-badge::after {
+    content: "Academic";
+}
+
+.card.work-badge::after {
+    content: "Professional";
+}
+
+.card.academic-badge::after,
+.card.work-badge::after {
+    position: absolute;
+    top: 5px;
+    right: 4px;
+    border-radius: var(--radius);
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: solid 2px;
+}
+
+[data-theme="light"] .card.academic-badge::after {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+[data-theme="light"] .card.work-badge::after {
+    background-color: var(--accent-light);
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+[data-theme="dark"] .card.academic-badge::after {
+    background-color: var(--primary-dark);
+    color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+[data-theme="dark"] .card.work-badge::after {
+    background-color: var(--accent-dark);
+    color: var(--accent-light);
+    border-color: var(--accent-light);
 }
