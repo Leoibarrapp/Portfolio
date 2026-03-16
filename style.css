@@ -7,7 +7,6 @@
     --gradient-hover: linear-gradient(0deg, var(--bg) 80%, var(--bg-light));
     --highlight: hsl(0 0% 60%);
     --border-card: solid 1px var(--border);
-    --radius: 1rem;
     --shadow:
         inset 0 1px 2px #ffffff50,
         0 2px 4px #00000030,
@@ -15,7 +14,11 @@
 
     --text: hsl(0 0% 95%);
     --text-muted: hsl(0 0% 70%);
-    --text-dark: hsl(0 0% 5%);
+
+    --radius: 1rem;
+    --radius-sm: 0.75rem;
+    --radius-md: 1.5rem;
+    --radius-lg: 2rem;
 
     --primary: hsl(121, 74%, 43%);
     --primary-light: hsl(121, 74%, 53%);
@@ -24,7 +27,7 @@
     --primary-darkest: hsl(121, 74%, 13%);
 
     --accent: hsl(200, 85%, 38%);
-    --accent-light: hsl(200, 85%, 58%);
+    --accent-light: hsl(200, 85%, 68%);
     --accent-dark: hsl(200, 85%, 28%);
 }
 
@@ -50,7 +53,7 @@
 
 #theme-toggle-button {
     position: relative;
-    width: 60px;
+    width: 64px;
     height: 32px;
     background-color: var(--bg-light);
     border-radius: 30px;
@@ -59,25 +62,46 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 7px;
-    border: 1px solid var(--border-card);
+    border: var(--border-card);
+    border-top: solid 1px var(--highlight);
     box-sizing: border-box;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow);
     margin: 0;
 }
 
-#theme-toggle-button img {
+.theme-icon {
     width: 20px;
     height: 20px;
     z-index: 2;
-    transition: opacity 0.3s ease;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+#dark-mode-icon {
+    mask: url("assets/icons/dark-mode-icon.svg") no-repeat center / contain;
+    -webkit-mask: url("assets/icons/dark-mode-icon.svg") no-repeat center / contain;
+}
+
+#light-mode-icon {
+    mask: url("assets/icons/light-mode-icon.svg") no-repeat center / contain;
+    -webkit-mask: url("assets/icons/light-mode-icon.svg") no-repeat center / contain;
+}
+
+[data-theme="dark"] #dark-mode-icon,
+[data-theme="light"] #light-mode-icon {
+    background-color: hsl(0 0% 5%);
+}
+
+[data-theme="light"] #dark-mode-icon,
+[data-theme="dark"] #light-mode-icon {
+    background-color: var(--text-muted);
 }
 
 .theme-toggle-thumb {
     position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 28px;
-    height: 28px;
+    top: 1px;
+    left: 1px;
+    width: 30px;
+    height: 30px;
     background: var(--primary);
     border-radius: 50%;
     z-index: 1;
@@ -86,7 +110,7 @@
 }
 
 [data-theme="light"] .theme-toggle-thumb {
-    transform: translateX(26px);
+    transform: translateX(30px);
 }
 
 #theme-toggle-button:hover .theme-toggle-thumb {
@@ -106,7 +130,9 @@ body {
 
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
+
+    user-select: none;
 }
 
 p {
@@ -116,9 +142,13 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h3 {
+    font-family: 'Segoe UI';
     color: var(--text);
     margin: 0;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .main-container {
@@ -157,7 +187,7 @@ button {
 }
 
 .nav-bar {
-    background: var(--gradient);
+    background-color: var(--bg);
     box-shadow: var(--shadow);
     border: var(--border-card);
     border-top: solid 1px var(--highlight);
@@ -183,10 +213,11 @@ button {
 .nav-bar .nav-item {
     padding: 10px 16px;
     text-decoration: none;
+    font-weight: bold;
     color: inherit;
 
     border-bottom: solid 2px transparent;
-    border-radius: var(--radius);
+    border-radius: var(--radius-sm);
 
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
@@ -194,13 +225,16 @@ button {
 .nav-bar .nav-item.active {
     color: var(--primary);
     background-color: var(--bg-light);
+    border-top: solid 1px var(--highlight);
     border-bottom: 3px solid var(--primary);
+    box-shadow: var(--shadow);
 }
 
 .nav-bar .nav-item:hover:not(.active) {
     background-color: var(--bg-light);
     transform: translateY(-2px);
     color: var(--primary-light);
+    box-shadow: var(--shadow);
 }
 
 .card {
@@ -211,7 +245,6 @@ button {
     border-top: solid 1px var(--highlight);
 
     padding: 2rem;
-    cursor: pointer;
     border-radius: var(--radius);
 
     display: flex;
@@ -221,21 +254,22 @@ button {
 
 }
 
-.card:hover {
+.card.interactive {
+    cursor: pointer;
+}
+
+.card.interactive:hover {
     background-color: var(--bg-light);
-    /* background: var(--gradient-hover); */
     transform: translateY(-5px);
 }
 
-.card:hover p {
+.card.interactive:hover p {
     color: var(--text);
-
 }
 
 .card p,
 .card h1,
 .card h2 {
     margin: 0;
-    text-align: justify;
     transition: color 0.2s ease-in-out;
 }

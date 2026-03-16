@@ -1,4 +1,3 @@
-const themeToggle = document.getElementById('theme-toggle-checkbox');
 const darkIcon = document.getElementById('dark-mode-icon');
 const lightIcon = document.getElementById('light-mode-icon');
 

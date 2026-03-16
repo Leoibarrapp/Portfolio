@@ -3,9 +3,10 @@
 <head>
     <title>Portfolio</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../about/about.css">
     <script>
-        let currentTheme = localStorage.getItem('theme') || "dark";
-        document.documentElement.setAttribute("data-theme", currentTheme);
+        let initTheme = localStorage.getItem('theme') || "dark";
+        document.documentElement.setAttribute("data-theme", initTheme);
     </script>
 </head>
 
@@ -20,21 +21,89 @@
 
         <div id="theme-toggle-button" onclick="toggleTheme()">
             <div class="theme-toggle-thumb"></div>
-            <img src="../assets/dark-mode-icon.svg" id="dark-mode-icon">
-            <img src="../assets/light-mode-icon.svg" id="light-mode-icon">
+            <div id="dark-mode-icon" class="theme-icon"></div>
+            <div id="light-mode-icon" class="theme-icon"></div>
         </div>
     </div>
 
     <div class="main-container">
         <div class="page-header">
             <h1>About Me</h1>
-            <p>I am a software engineer with experience in web development and mobile applications. I am passionate
-                about creating innovative solutions and solving complex problems. I am a quick learner and enjoy working
-                in collaborative environments.</p>
+            <p>
+                I am a student of the 7th semester of Software Engineering at Universidad Catolica Andres Bello (UCAB),
+                in Caracas, Venezuela.
+                <br><br>
+                I am a software engineer with experience in web development and mobile applications. I am passionate
+                about creating innovative solutions and solving complex problems. I have a strong foundation in computer
+                science and mathematics, and I am always looking for new challenges to grow and improve my skills. I am
+                a quick learner and enjoy working in collaborative environments.
+            </p>
+        </div>
+
+        <div class="cards">
+            <div class="card languages">
+                <h2>Languages</h2>
+                <p>
+                    I have experience working with various programming languages both backend and frontend, including:
+                </p>
+
+                <div class="skills-container">
+                    <img class="captioned" alt="Java"
+                        src="https://wallpapers.com/images/hd/java-programming-language-logo-transparent-k6ngrbl1m2xbzz4t-2.jpg">
+                    <img class="captioned" alt="C++" src="https://isocpp.org/files/img/cpp_logo.png">
+                    <img class="captioned" alt="C"
+                        src="https://www.pngkit.com/png/full/101-1010012_c-programming-icon-c-programming-language-logo.png">
+                    <img class="captioned" alt="JavaScript"
+                        src="https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_1280.png">
+                    <img class="captioned" alt="TypeScript"
+                        src="https://w7.pngwing.com/pngs/1008/952/png-transparent-typescript-hd-logo.png">
+                    <img class="captioned" alt="Pascal"
+                        src="https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/7c/75/af/7c75af6d-f246-5a3f-6c2a-350fa90f956c/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg">
+                    <img class="captioned" alt="SQL"
+                        src="https://windsor.ai/wp-content/uploads/2025/03/azure_sql_database_logo_freelogovectors.net_.png">
+                    <img class="captioned" alt="Kotlin" src="https://codingnconcepts.com/img/logo/kotlin.png">
+                    <img class="captioned" alt="HTML"
+                        src="https://www.shareicon.net/data/512x512/2015/09/08/97875_html_512x512.png">
+                    <img class="captioned" alt="CSS" src="https://logospng.org/download/css-3/logo-css-3-1536.png">
+                </div>
+            </div>
+
+            <div class="card skills">
+                <h2>Technologies & Tools</h2>
+                <p>
+                    During my years as a developer, I have learned to work with different technologies, frameworks and
+                    other tools including:
+                </p>
+
+                <div class="skills-container">
+                    <img class="captioned" alt="Angular"
+                        src="https://cdn.freebiesupply.com/logos/large/2x/angular-icon-1-logo-png-transparent.png">
+                    <img class="captioned bg" alt="Node.js"
+                        src="https://www.nicepng.com/png/full/80-803546_javascript-vector-transparent-node-js-logo-png.png">
+                    <img class="captioned" alt="PostgreSQL"
+                        src="https://www.postgresql.org/media/img/about/press/elephant.png">
+                    <img class="captioned bg" alt="GitHub"
+                        src="https://cdn-icons-png.flaticon.com/512/4926/4926625.png">
+                    <img class="captioned" alt="Wordpress"
+                        src="https://pngimg.com/uploads/wordpress/wordpress_PNG47.png">
+                    <img class="captioned" alt="Postman" src="https://www.svgrepo.com/show/354202/postman-icon.svg">
+                    <img class="captioned" alt="Botpress"
+                        src="https://cdn-1.webcatalog.io/catalog/botpress/botpress-icon-filled-256.png?v=1696597452530">
+                    <img class="captioned" alt="Android Studio"
+                        src="https://logonoid.com/images/android-studio-logo.png">
+                    <img class="captioned" alt="IntelliJ"
+                        src="https://th.bing.com/th/id/R.98865e06d77faca32b3e118df119049e?rik=AU0%2bE0ROLAbnog&riu=http%3a%2f%2flogonoid.com%2fimages%2fintellij-idea-logo.png&ehk=CapqYnZAeX0cbsUWxFNWr913YwdQDC7OFt%2ftIAEb%2fBU%3d&risl=&pid=ImgRaw&r=0">
+                    <img class="captioned" alt="VS Code"
+                        src="https://quarto.org/docs/get-started/images/vscode-logo.png">
+                    <img class="captioned" alt="Figma"
+                        src="https://th.bing.com/th/id/R.3fc90e0478c6a89520b4906098cbe508?rik=quX%2fauXFd5h%2fAw&riu=http%3a%2f%2fwww.toolpilot.ai%2fcdn%2fshop%2ffiles%2f32ede9ad969b8569841dce43e4c2d5fd.jpg%3fv%3d1699519755&ehk=jHEGexgtnfRnMv4qzjasORUF4PK4mQ8pHVOi9HbfqqU%3d&risl=&pid=ImgRaw&r=0">
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="../script.js"></script>
+    <script src="../about/about.js"></script>
 </body>
 
 </html>

@@ -14,7 +14,7 @@ cards.forEach(card => {
     card.addEventListener("click", () => {
         const title = card.querySelector(".card-title").innerHTML;
         const description = card.querySelector(".card-full-description").innerHTML;
-        const assets = card.querySelectorAll(".card-asset");
+        const assets = card.querySelectorAll(".card-assets img, .card-assets video");
         const link = card.querySelector(".card-link-button");
 
         modalCarouselSlides.innerHTML = "";
@@ -32,32 +32,34 @@ cards.forEach(card => {
             modalLinkButton.style.display = "none";
         }
 
-        assets.forEach((asset, index) => {
-            const newSlide = document.createElement("div");
-            newSlide.classList.add("modal-carousel-slide");
+        if (assets) {
+            assets.forEach((asset, index) => {
+                const newSlide = document.createElement("div");
+                newSlide.classList.add("modal-carousel-slide");
 
-            const clonedAsset = asset.cloneNode(true);
-            clonedAsset.removeAttribute("hidden");
-            newSlide.appendChild(clonedAsset);
+                const clonedAsset = asset.cloneNode(true);
+                clonedAsset.removeAttribute("hidden");
+                newSlide.appendChild(clonedAsset);
 
-            modalCarouselSlides.appendChild(newSlide);
+                modalCarouselSlides.appendChild(newSlide);
 
-            const dot = document.createElement("span");
-            dot.classList.add("carousel-dot");
-            dot.addEventListener("click", () => {
-                slideIndex = index;
-                showSlides();
+                const dot = document.createElement("span");
+                dot.classList.add("carousel-dot");
+                dot.addEventListener("click", () => {
+                    slideIndex = index;
+                    showSlides();
+                });
+                modalCarouselDots.appendChild(dot);
             });
-            modalCarouselDots.appendChild(dot);
-        });
 
-        const carouselButtons = document.querySelectorAll(".modal-carousel-button");
-        if (assets.length <= 1) {
-            carouselButtons.forEach(btn => btn.style.display = "none");
-            modalCarouselDots.style.display = "none";
-        } else {
-            carouselButtons.forEach(btn => btn.style.display = "block");
-            modalCarouselDots.style.display = "flex";
+            const carouselButtons = document.querySelectorAll(".modal-carousel-button");
+            if (assets.length <= 1) {
+                carouselButtons.forEach(btn => btn.style.display = "none");
+                modalCarouselDots.style.display = "none";
+            } else {
+                carouselButtons.forEach(btn => btn.style.display = "block");
+                modalCarouselDots.style.display = "flex";
+            }
         }
 
         modal.classList.add("show");

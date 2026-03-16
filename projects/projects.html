@@ -21,8 +21,8 @@
 
         <div id="theme-toggle-button" onclick="toggleTheme()">
             <div class="theme-toggle-thumb"></div>
-            <img src="../assets/dark-mode-icon.svg" id="dark-mode-icon">
-            <img src="../assets/light-mode-icon.svg" id="light-mode-icon">
+            <div id="dark-mode-icon" class="theme-icon"></div>
+            <div id="light-mode-icon" class="theme-icon"></div>
         </div>
 
     </div>
@@ -38,54 +38,54 @@
         </div>
 
         <div class="cards-container">
-            <div class="card work-badge">
+            <div class="card interactive work-badge">
                 <h1 class="card-title">Onduven</h1>
                 <p class="card-description">Website for a Venezuelan company with an integrated chatbot.</p>
 
                 <div class="hidden-content" hidden>
                     <p class="card-full-description">
                         Ondulados de Venezuela (Onduven) is a Venezuelan company that specializes in the production of
-                        cardboard
-                        boxes and its designs. They have been in the market for over 45 years and they wanted to renew
-                        their
-                        image and create a platform where their clients would have a good experience browsing their
-                        products and services.
+                        cardboard boxes and its designs. They have been in the market for over 45 years and they wanted
+                        to renew their image and create a platform where their clients would have a good experience
+                        browsing their products and services.
                         <br> <br>
                         The website has a simple and intuitive interface, with a chatbot integrated in the website to
                         answer the clients' most common questions and offer their contact info. The chatbot was done
-                        with
-                        Botpress.
+                        with Botpress.
                     </p>
-                    <video class="card-asset" controls src="../assets/videos/onduven.mp4"></video>
-                    <img class="card-asset" src="../assets/images/onduven.png">
+                    <div class="card-assets">
+                        <img src="../assets/images/onduven.png">
+                        <video controls src="../assets/videos/onduven.mp4"></video>
+                    </div>
                     <a href="https://onduven.com/" class="card-link-button">Visit Website</a>
                 </div>
             </div>
 
-            <div class="card work-badge">
+            <div class="card interactive work-badge">
                 <h1 class="card-title">ISOC VE</h1>
-                <p class="card-description">Website for the Venezuelan Internet Society chapter.</p>
+                <p class="card-description">Website for the Internet Society's Venezuelan chapter.</p>
 
                 <div class="hidden-content" hidden>
                     <p class="card-full-description">
                         The Internet Society is a non-profit organization that works to promote the development and use
-                        of
-                        the Internet. In has 'chapters' all around the world, and the Venezuelan chapter is one of them.
+                        of the Internet. It has 'chapters' all around the world, and the Venezuelan chapter is one of
+                        them.
                         <br> <br>
                         The website has a simple and modern interface, adapted to the organization's branding. It allows
                         users to learn about the organization, its mission, vision, values, and the work it does in
                         Venezuela, centralizing all their information in one place. In the website you can check out all
-                        the
-                        activities, news and it provides all the contact information for the organization, including a
-                        step-by-step guide on how to become a member.
+                        the activities, news and it provides all the contact information for the organization, including
+                        a step-by-step guide on how to become a member.
                     </p>
-                    <img class="card-asset" src="../assets/images/isocve-1.png">
-                    <img class="card-asset" src="../assets/images/isocve-2.png">
+                    <div class="card-assets">
+                        <img src="../assets/images/isocve-1.png">
+                        <img src="../assets/images/isocve-2.png">
+                    </div>
                     <a href="https://isocve.org/" class="card-link-button">Visit Website</a>
                 </div>
             </div>
 
-            <div class="card academic-badge">
+            <div class="card interactive academic-badge">
                 <h1 class="card-title">ViajesUCAB</h1>
                 <p class="card-description">Online platform for booking trips, activities and managing reservations.
                 </p>
@@ -110,12 +110,14 @@
                         about
                         the most popular services. This was done using JsReports.
                     </p>
-                    <img class="card-image" src="">
+                    <div class="card-assets">
+
+                    </div>
                     <a href="" class="card-link-button"></a>
                 </div>
             </div>
 
-            <div class="card academic-badge">
+            <div class="card interactive academic-badge">
                 <h1 class="card-title">UCAB Place</h1>
                 <p class="card-description">E-commerce website made for the UCAB community. </p>
 
@@ -144,24 +146,41 @@
                         when
                         needed.
                     </p>
-                    <img class="card-asset" src="">
+                    <div class="card-assets">
+                        <img src="../assets/images/ucab-place.png">
+                        <video controls src="../assets/videos/ucab-place.mp4"></video>
+                    </div>
                 </div>
             </div>
 
-            <div class="card academic-badge">
-                <h2 class="card-title">Futuristic Battleship</h2>
+            <div class="card interactive academic-badge">
+                <h1 class="card-title">Futuristic Battleship</h1>
                 <p class="card-description">Web version of the classic Battleship game with a tournament system.</p>
 
                 <div class="hidden-content" hidden>
                     <p class="card-full-description">
+                        This is a web version of the classic Battleship game, with a futuristic theme. It can be played
+                        locally in multiplayer mode, opening two browser tabs, or in a tournament mode (up to 16
+                        players) where players
+                        can compete against each other.
+                        <br> <br>
+                        The game is played on a 10x10 grid, where each player has a fleet of 10 ships. The goal is to
+                        sink all of the opponent's ships before they sink yours. The game also features a power-up
+                        system, where players can collect power-ups to gain advantages over their opponents.
+                        <br> <br>
+                        The game's frontend was made using pure HTML, CSS and JavaScript, with no frameworks or
+                        libraries.
+                        The backend was made using Node.js and Socket.IO for real-time communication between
+                        players.
 
                     </p>
-                    <img class="card-image" src="">
+                    <div class="card-assets">
+                    </div>
                     <a href="" class="card-link-button"></a>
                 </div>
             </div>
 
-            <div class="card academic-badge">
+            <div class="card interactive academic-badge">
                 <h1 class="card-title">Pixel UNO</h1>
                 <p class="card-description">Desktop application for playing UNO against the computer.</p>
 
@@ -180,51 +199,80 @@
                         the
                         stats section.
                     </p>
-                    <img class="card-asset" src="../assets/images/uno-game-img.png">
-                    <video class="card-asset" src="../assets/videos/uno-game-video.mp4" controls></video>
+                    <div class="card-assets">
+                        <img src="../assets/images/uno-game-img.png">
+                        <video src="../assets/videos/uno-game-video.mp4" controls></video>
+                    </div>
                     <a href="https://github.com/Leoibarrapp/uno-game-gui.git" class="card-link-button">Check
                         Repository!</a>
                 </div>
             </div>
 
 
-            <div class="card work-badge">
-                <h2 class="card-title">Cold & Hot Zone</h2>
+            <div class="card interactive work-badge">
+                <h1 class="card-title">Cold & Hot Zone</h1>
                 <p class="card-description">Android applications that communicate in real time.
                 </p>
 
                 <div class="hidden-content" hidden>
                     <p class="card-full-description">
-
+                        This was a project that I made with a partner for a manufacturing company. It consists of
+                        two Android applications that communicate in real time using WebSockets, so the company can
+                        monitor the process of quality control and production.
+                        <br> <br>
+                        The first app (Cold Zone) is used by the quality control specialist. While he is doing his job,
+                        he enter the data of the products into the app, which is downloaded in an Android tablet,
+                        and the app sends it to the server.
+                        <br> <br>
+                        The second app (Hot Zone) is used by the workers in the production line. The app displays
+                        the data in an external monitor powered by a Fire TV Stick connected to the same
+                        network.
+                        They can see the data of the products in real time, and can make decisions based on the data,
+                        minimizing defects and optimizing the production process.
+                        <br> <br>
+                        The app periodically saves the data in a local PostgreSQL database, so the company can
+                        analyze the data and make decisions based on it.
                     </p>
-                    <img class="card-image" src="">
                     <a href="" class="card-link-button"></a>
                 </div>
             </div>
 
 
-            <div class="card academic-badge">
+            <div class="card interactive academic-badge">
                 <h1 class="card-title">Eternals</h1>
                 <p class="card-description">Wizard-themed videogame that can be played in the Windows terminal.</p>
 
                 <div class="hidden-content" hidden>
                     <p class="card-full-description">
-
+                        This is a Wizard-themed videogame that can be played in the Windows terminal. It features a
+                        turn-based combat system, where the player can choose from different spells to defeat the
+                        enemy.
+                        <br> <br>
+                        The game was made using C++ and advanced data structures. Every user chooses a house and it
+                        gives you default spells. When you play, you earn points that you can exchange for new spells
+                        and objects. Also, there's a roulette where you can get random rewards.
+                        <br> <br>
+                        The game features a leaderboard, where you can see the top players in the game. The animations
+                        are made from scratch using the Windows terminal, with the help of ASCII characters.
                     </p>
-                    <img class="card-image" src="">
+                    <div class="card-assets">
+                        <img src="../assets/images/eternals-1.png" alt="">
+                        <video src="../assets/videos/eternals.mp4" controls></video>
+                        <img src="../assets/images/eternals-3.png" alt="">
+                    </div>
                     <a href="" class="card-link-button"></a>
                 </div>
             </div>
 
-            <div class="card academic-badge">
+            <div class="card interactive academic-badge">
                 <h1 class="card-title">Jokes API</h1>
-                <p class="card-description">Simple REST API for posting, editing and getting jokes.</p>
+                <p class="card-description">Simple API project for posting, editing and getting jokes.</p>
 
                 <div class="hidden-content" hidden>
                     <p class="card-full-description">
-
+                        This was my first time working with APIs. It is a simple API that allows you to post, edit,
+                        and get jokes into a database using MongoDB.
                     </p>
-                    <img class="card-image" src="">
                     <a href="" class="card-link-button"></a>
                 </div>
             </div>
