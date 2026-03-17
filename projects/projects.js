@@ -27,7 +27,14 @@ cards.forEach(card => {
         if (link) {
             modalLinkButton.style.display = "flex";
             modalLinkButton.onclick = () => window.open(link.href, "_blank");
-            modalLinkButton.innerHTML = link.innerHTML || "Check it out!";
+            modalLinkButton.innerHTML = link.innerHTML || "Check the repository";
+            if (card.classList.contains("work-badge")) {
+                modalLinkButton.classList.remove("btn-primary");
+                modalLinkButton.classList.add("btn-secondary");
+            } else {
+                modalLinkButton.classList.remove("btn-secondary");
+                modalLinkButton.classList.add("btn-primary");
+            }
         } else {
             modalLinkButton.style.display = "none";
         }

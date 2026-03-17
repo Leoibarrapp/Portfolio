@@ -107,20 +107,12 @@
 }
 
 .card-modal .modal-link-button {
-    background-color: var(--primary);
-    margin: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     margin: auto;
 }
-
-.card-modal .modal-link-button:hover {
-    background-color: var(--primary-light);
-}
-
 
 /* carousel */
 
@@ -253,7 +245,7 @@
 
 [data-theme="light"] .card.work-badge::after {
     background-color: var(--accent-light);
-    color: var(--accent-dark);
+    color: var(--accent-darkest);
 }
 
 [data-theme="dark"] .card.academic-badge::after {
@@ -263,5 +255,14 @@
 
 [data-theme="dark"] .card.work-badge::after {
     background-color: var(--accent-dark);
-    color: var(--accent-light);
+    color: var(--accent-lightest);
+}
+
+.card.work-badge .card-link-button {
+    background-color: var(--accent-lightest);
+    border: 1px solid var(--accent);
+    color: var(--accent-darkest);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
 }
