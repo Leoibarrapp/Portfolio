@@ -257,12 +257,3 @@
     background-color: var(--accent-dark);
     color: var(--accent-lightest);
 }
-
-.card.work-badge .card-link-button {
-    background-color: var(--accent-lightest);
-    border: 1px solid var(--accent);
-    color: var(--accent-darkest);
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
-}

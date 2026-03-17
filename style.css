@@ -31,6 +31,9 @@
     --accent: hsl(200, 85%, 48%);
     --accent-light: hsl(200, 85%, 58%);
     --accent-lightest: hsl(200, 85%, 68%);
+
+    --border-primary: hsl(121, 74%, 40%);
+    --border-accent: hsl(200, 85%, 45%);
 }
 
 [data-theme="light"] {
@@ -150,18 +153,7 @@ h3 {
     color: var(--text);
     margin: 0;
     line-height: 1.2;
-}
-
-h1 {
-    font-weight: 700;
-}
-
-h2 {
-    font-weight: 600;
-}
-
-h3 {
-    font-weight: 500;
+    font-weight: normal;
 }
 
 .main-container {
@@ -194,8 +186,7 @@ button {
     color: var(--primary-darkest);
     font-weight: bold;
 
-    border: 1px solid var(--primary-dark);
-    border-top: solid 2px var(--primary-lightest);
+    border-top: solid 2px var(--primary-lightest) !important;
 }
 
 .btn-primary:hover {
@@ -207,7 +198,6 @@ button {
     color: var(--accent-darkest);
     font-weight: bold;
 
-    border: 1px solid var(--accent-dark);
     border-top: solid 2px var(--accent-lightest);
 }
 
@@ -301,4 +291,9 @@ button {
 .card h2 {
     margin: 0;
     transition: color 0.2s ease-in-out;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: normal;
 }
