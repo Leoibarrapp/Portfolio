@@ -206,6 +206,7 @@
     opacity: 1;
 }
 
+/* cards */
 
 .card {
     position: relative;
@@ -215,20 +216,20 @@
     border-left: solid 4px var(--primary);
 }
 
-.card.work-badge {
-    border-left: solid 4px var(--accent);
-}
-
-.card.personal-badge {
-    border-left: solid 4px var(--yellow);
-}
-
 .card.academic-badge::after {
     content: "Academic";
 }
 
+.card.work-badge {
+    border-left: solid 4px var(--accent);
+}
+
 .card.work-badge::after {
     content: "Professional";
+}
+
+.card.personal-badge {
+    border-left: solid 4px var(--yellow);
 }
 
 .card.personal-badge::after {
@@ -249,17 +250,7 @@
 
 [data-theme="light"] .card.academic-badge::after {
     background-color: var(--primary-light);
-    color: var(--primary-dark);
-}
-
-[data-theme="light"] .card.work-badge::after {
-    background-color: var(--accent-light);
-    color: var(--accent-darkest);
-}
-
-[data-theme="light"] .card.personal-badge::after {
-    background-color: var(--yellow-light);
-    color: var(--yellow-darkest);
+    color: var(--primary-darkest);
 }
 
 [data-theme="dark"] .card.academic-badge::after {
@@ -267,9 +258,19 @@
     color: var(--primary-light);
 }
 
+[data-theme="light"] .card.work-badge::after {
+    background-color: var(--accent-light);
+    color: var(--accent-darkest);
+}
+
 [data-theme="dark"] .card.work-badge::after {
     background-color: var(--accent-dark);
     color: var(--accent-lightest);
+}
+
+[data-theme="light"] .card.personal-badge::after {
+    background-color: var(--yellow-light);
+    color: var(--yellow-darkest);
 }
 
 [data-theme="dark"] .card.personal-badge::after {

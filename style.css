@@ -24,10 +24,10 @@
 
     --primary-darkest: hsl(121, 74%, 13%);
     --primary-dark: hsl(121, 74%, 23%);
-    --primary-darker: hsl(121, 74%, 33%);
     --primary: hsl(121, 74%, 43%);
     --primary-light: hsl(121, 74%, 53%);
     --primary-lightest: hsl(121, 74%, 63%);
+    --primary-transparent: hsla(121, 74%, 43%, 0.05);
 
     --accent-darkest: hsl(200, 85%, 18%);
     --accent-dark: hsl(200, 85%, 28%);
@@ -46,6 +46,12 @@
 }
 
 [data-theme="light"] {
+    --primary-darkest: hsl(121, 74%, 13%);
+    --primary-dark: hsl(121, 74%, 23%);
+    --primary: hsl(121, 74%, 33%);
+    --primary-light: hsl(121, 74%, 43%);
+    --primary-lightest: hsl(121, 74%, 53%);
+    --primary-transparent: hsla(121, 74%, 43%, 0.05);
 
     --bg-dark: hsl(0 0% 85%);
     --bg: hsl(0 0% 90%);
@@ -134,6 +140,7 @@
 
 body {
     font-family: 'Google Sans', sans-serif;
+    /* font-family: 'Segoe UI'; */
     background-color: var(--bg-dark) !important;
     color: var(--text-muted);
 
@@ -366,4 +373,9 @@ a.card {
     font-size: 0.8rem;
     font-weight: bold;
     ;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--primary);
 }
