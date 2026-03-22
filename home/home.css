@@ -1,11 +1,55 @@
 :root {
     --dot-color: rgba(255, 255, 255, 0.2);
-    --spotlight-color: rgba(255, 255, 255, 0.05);
 }
 
+[data-theme="light"] {
+    --dot-color: rgba(0, 0, 0, 0.3);
+}
+
+
 body {
-    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-color: var(--bg-dark);
+}
+
+.grid-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), var(--dot-size, 25px));
+    grid-template-rows: repeat(var(--grid-rows), var(--dot-size, 25px));
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.dot-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dot {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: var(--dot-color);
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dot.highlight {
+    background-color: var(--primary);
+    transform: scale(2.5);
+    box-shadow: 0 0 8px var(--primary-light);
+}
+
+[data-theme="light"] .dot.highlight {
+    background-color: var(--primary-dark);
+    box-shadow: 0 0 8px var(--primary);
 }
 
 .home-container {
@@ -15,18 +59,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.spotlight {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%),
-            var(--spotlight-color),
-            transparent 40%);
 }
 
 .home-content {

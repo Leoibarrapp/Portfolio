@@ -33,6 +33,6 @@ function toggleTheme() {
 document.addEventListener("DOMContentLoaded", () => {
     const footer = document.createElement('footer');
     footer.className = 'page-footer';
-    footer.innerHTML = '<p> 2026 - Created by <span class="gradient-text">Leonardo Ibarra</p>';
+    footer.innerHTML = '<p> 2026 - Created by <span style="color: var(--primary)">Leonardo Ibarra</p>';
     document.body.appendChild(footer);
 })
