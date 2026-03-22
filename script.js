@@ -28,3 +28,11 @@ function toggleTheme() {
         document.documentElement.classList.remove('theme-transition');
     }, 400);
 }
+
+//crea el footer en cada pagina
+document.addEventListener("DOMContentLoaded", () => {
+    const footer = document.createElement('footer');
+    footer.className = 'page-footer';
+    footer.innerHTML = '<p> 2026 - Created by <span class="gradient-text">Leonardo Ibarra</p>';
+    document.body.appendChild(footer);
+})

@@ -28,18 +28,32 @@ cards.forEach(card => {
             modalLinkButton.style.display = "flex";
             modalLinkButton.onclick = () => window.open(link.href, "_blank");
             modalLinkButton.innerHTML = link.innerHTML || "Check the repository";
+
             if (card.classList.contains("work-badge")) {
                 modalLinkButton.classList.remove("btn-primary");
-                modalLinkButton.classList.add("btn-secondary");
-            } else {
-                modalLinkButton.classList.remove("btn-secondary");
+                modalLinkButton.classList.remove("btn-yellow");
+                modalLinkButton.classList.add("btn-accent");
+            } else if (card.classList.contains("academic-badge")) {
+                modalLinkButton.classList.remove("btn-accent");
+                modalLinkButton.classList.remove("btn-yellow");
                 modalLinkButton.classList.add("btn-primary");
+            } else if (card.classList.contains("personal-badge")) {
+                modalLinkButton.classList.remove("btn-primary");
+                modalLinkButton.classList.remove("btn-accent");
+                modalLinkButton.classList.add("btn-yellow");
             }
         } else {
             modalLinkButton.style.display = "none";
         }
 
-        if (assets) {
+        console.log(assets);
+
+        const carouselWrapper = document.querySelector(".modal-carousel-wrapper");
+        const modalContent = document.querySelector(".modal-content");
+
+        if (assets.length > 0) {
+            carouselWrapper.style.display = "flex";
+            modalContent.style.width = "50%";
             assets.forEach((asset, index) => {
                 const newSlide = document.createElement("div");
                 newSlide.classList.add("modal-carousel-slide");
@@ -67,6 +81,10 @@ cards.forEach(card => {
                 carouselButtons.forEach(btn => btn.style.display = "block");
                 modalCarouselDots.style.display = "flex";
             }
+        }
+        else {
+            carouselWrapper.style.display = "none";
+            modalContent.style.width = "100%";
         }
 
         modal.classList.add("show");

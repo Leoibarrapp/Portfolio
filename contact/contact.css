@@ -1,0 +1,27 @@
+#linkedin-icon {
+    mask: url("../assets/icons/linkedin-icon.svg") no-repeat center / contain;
+    -webkit-mask: url("../assets/icons/linkedin-icon.svg") no-repeat center / contain;
+}
+
+#email-icon {
+    mask: url("../assets/icons/email-icon.svg") no-repeat center / contain;
+    -webkit-mask: url("../assets/icons/email-icon.svg") no-repeat center / contain;
+}
+
+#github-icon {
+    mask: url("../assets/icons/github-icon.svg") no-repeat center / contain;
+    -webkit-mask: url("../assets/icons/github-icon.svg") no-repeat center / contain;
+}
+
+.card-icon {
+    background-color: var(--primary);
+}
+
+.cards-container {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.card {
+    flex: none !important
+}

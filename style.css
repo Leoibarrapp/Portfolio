@@ -32,6 +32,12 @@
     --accent-light: hsl(200, 85%, 58%);
     --accent-lightest: hsl(200, 85%, 68%);
 
+    --yellow-darkest: hsl(45, 100%, 15%);
+    --yellow-dark: hsl(45, 100%, 25%);
+    --yellow: hsl(45, 100%, 45%);
+    --yellow-light: hsl(45, 100%, 55%);
+    --yellow-lightest: hsl(45, 100%, 65%);
+
     --border-primary: hsl(121, 74%, 40%);
     --border-accent: hsl(200, 85%, 45%);
 }
@@ -168,6 +174,11 @@ h3 {
     gap: 1rem;
 }
 
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
 button {
     padding: 0.75rem;
     border-radius: var(--radius);
@@ -193,7 +204,7 @@ button {
     background-color: var(--primary-light) !important;
 }
 
-.btn-secondary {
+.btn-accent {
     background-color: var(--accent);
     color: var(--accent-darkest);
     font-weight: bold;
@@ -201,8 +212,20 @@ button {
     border-top: solid 2px var(--accent-lightest);
 }
 
-.btn-secondary:hover {
+.btn-accent:hover {
     background-color: var(--accent-light) !important;
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--yellow-darkest);
+    font-weight: bold;
+
+    border-top: solid 2px var(--yellow-lightest);
+}
+
+.btn-yellow:hover {
+    background-color: var(--yellow-light) !important;
 }
 
 .nav-bar {
@@ -256,8 +279,20 @@ button {
     box-shadow: var(--shadow);
 }
 
+.cards-container {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.cards-container .card {
+    flex: 1;
+    min-width: 0;
+    overflow: visible;
+}
+
+
 .card {
-    /* background: var(--gradient); */
     background-color: var(--bg);
     box-shadow: var(--shadow);
     border: var(--border-card);
@@ -273,16 +308,19 @@ button {
 
 }
 
-.card.interactive {
+.card.interactive,
+a.card {
     cursor: pointer;
 }
 
-.card.interactive:hover {
+.card.interactive:hover,
+a.card:hover {
     background-color: var(--bg-light);
     transform: translateY(-5px);
 }
 
-.card.interactive:hover p {
+.card.interactive:hover p,
+a.card:hover p {
     color: var(--text);
 }
 
@@ -293,7 +331,32 @@ button {
     transition: color 0.2s ease-in-out;
 }
 
-.page-header h1 {
-    font-size: 3rem;
-    font-weight: normal;
+a.card {
+    text-decoration: none !important;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding: 1rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: bold;
+    ;
 }

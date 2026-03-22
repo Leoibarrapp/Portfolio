@@ -219,6 +219,10 @@
     border-left: solid 4px var(--accent);
 }
 
+.card.personal-badge {
+    border-left: solid 4px var(--yellow);
+}
+
 .card.academic-badge::after {
     content: "Academic";
 }
@@ -227,8 +231,13 @@
     content: "Professional";
 }
 
+.card.personal-badge::after {
+    content: "Personal";
+}
+
 .card.academic-badge::after,
-.card.work-badge::after {
+.card.work-badge::after,
+.card.personal-badge::after {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -248,6 +257,11 @@
     color: var(--accent-darkest);
 }
 
+[data-theme="light"] .card.personal-badge::after {
+    background-color: var(--yellow-light);
+    color: var(--yellow-darkest);
+}
+
 [data-theme="dark"] .card.academic-badge::after {
     background-color: var(--primary-dark);
     color: var(--primary-light);
@@ -256,4 +270,9 @@
 [data-theme="dark"] .card.work-badge::after {
     background-color: var(--accent-dark);
     color: var(--accent-lightest);
+}
+
+[data-theme="dark"] .card.personal-badge::after {
+    background-color: var(--yellow-dark);
+    color: var(--yellow-lightest);
 }

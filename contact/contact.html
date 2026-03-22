@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="../assets/icons/web-icon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../contact/contact.css">
+    <script>
+        let initTheme = localStorage.getItem('theme') || "dark";
+        document.documentElement.setAttribute("data-theme", initTheme);
+    </script>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="nav-group">
+            <a class="nav-item" href="../home/home.html">Home</a>
+            <a class="nav-item" href="../about/about.html">About Me</a>
+            <a class="nav-item" href="../projects/projects.html">Projects</a>
+            <a class="nav-item active" href="../contact/contact.html">Contact</a>
+        </div>
+
+        <div id="theme-toggle-button" onclick="toggleTheme()">
+            <div class="theme-toggle-thumb"></div>
+            <div id="dark-mode-icon" class="theme-icon"></div>
+            <div id="light-mode-icon" class="theme-icon"></div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="page-header">
+            <h1>Contact</h1>
+            <p>
+                I am always open to new opportunities and collaborations. If you have anything to discuss, feel free to
+                reach out to me through any of the following channels:
+            </p>
+        </div>
+
+        <div class="cards-container">
+            <a class="card" href="mailto:leonardoibarra03@gmail.com" target="_blank">
+                <div class="card-header">
+                    <div class="card-icon" id="email-icon"></div>
+                    <div class="card-title">
+                        <h2>Email</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>leonardoibarra03@gmail.com</p>
+                </div>
+            </a>
+
+            <a class="card" href="https://www.linkedin.com/in/leonardo-antonio-ibarra-pereira/" target="_blank">
+                <div class="card-header">
+                    <div class="card-icon" id="linkedin-icon"></div>
+                    <div class="card-title">
+                        <h2>LinkedIn</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Leonardo Antonio Ibarra Pereira</p>
+                </div>
+            </a>
+
+            <a class="card" href="https://www.github.com/leoibarrapp" target="_blank">
+                <div class="card-header">
+                    <div class="card-icon" id="github-icon"></div>
+                    <div class="card-title">
+                        <h2>GitHub</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>Leoibarrap</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
