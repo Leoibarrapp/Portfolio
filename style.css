@@ -14,6 +14,8 @@
 
     --text: hsl(0 0% 95%);
     --text-muted: hsl(0 0% 70%);
+    --dot-color: rgba(255, 255, 255, 0.1);
+    --dot-size: 35px;
 
     --radius: 1rem;
     --radius-sm: 0.75rem;
@@ -22,6 +24,7 @@
 
     --primary-darkest: hsl(121, 74%, 13%);
     --primary-dark: hsl(121, 74%, 23%);
+    --primary-darker: hsl(121, 74%, 33%);
     --primary: hsl(121, 74%, 43%);
     --primary-light: hsl(121, 74%, 53%);
     --primary-lightest: hsl(121, 74%, 63%);
@@ -43,6 +46,7 @@
 }
 
 [data-theme="light"] {
+
     --bg-dark: hsl(0 0% 85%);
     --bg: hsl(0 0% 90%);
     --bg-light: hsl(0 0% 95%);
@@ -52,7 +56,7 @@
 
     --text: hsl(0 0% 5%);
     --text-muted: hsl(0 0% 30%);
-
+    --dot-color: rgba(0, 0, 0, 0.2);
 }
 
 .theme-transition,
@@ -144,6 +148,9 @@ body {
     gap: 2.5rem;
 
     user-select: none;
+
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: var(--dot-size) var(--dot-size);
 }
 
 p {

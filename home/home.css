@@ -1,55 +1,49 @@
 :root {
-    --dot-color: rgba(255, 255, 255, 0.2);
+    --dot-highlight-color: var(--primary);
+    --dot-highlight-size: 150px;
 }
 
 [data-theme="light"] {
-    --dot-color: rgba(0, 0, 0, 0.3);
+    --dot-highlight-color: var(--primary-darker);
 }
 
+/* capa superior de puntos brillantes */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
 
-body {
-    background-color: var(--bg-dark);
+    background-image: radial-gradient(var(--dot-highlight-color) 1px, transparent 1px);
+    background-size: 35px 35px;
+
+    -webkit-mask-image: radial-gradient(150px circle at var(--x, 50%) var(--y, 50%),
+            black 20%,
+            transparent 100%);
+    mask-image: radial-gradient(150px circle at var(--x, 50%) var(--y, 50%),
+            black 20%,
+            transparent 100%);
 }
 
-.grid-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(var(--grid-cols), var(--dot-size, 25px));
-    grid-template-rows: repeat(var(--grid-rows), var(--dot-size, 25px));
-    pointer-events: none;
+[data-theme="light"] body::before {
+    background-image: radial-gradient(var(--dot-highlight-color) 1px, transparent 1px);
+    background-size: var(--dot-size) var(--dot-size);
+}
+
+.spotlight-glow {
+    position: absolute;
+    inset: 0;
     z-index: -1;
-    overflow: hidden;
-}
+    /* Sobre todos los puntos, pero bajo el texto */
+    pointer-events: none;
+    /* Crucial para que el mouse atraviese */
 
-.dot-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.dot {
-    width: 2px;
-    height: 2px;
-    border-radius: 50%;
-    background-color: var(--dot-color);
-    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.dot.highlight {
-    background-color: var(--primary);
-    transform: scale(2.5);
-    box-shadow: 0 0 8px var(--primary-light);
-}
-
-[data-theme="light"] .dot.highlight {
-    background-color: var(--primary-dark);
-    box-shadow: 0 0 8px var(--primary);
+    /* Gradiente radial simple de color de brillo -> transparente */
+    background: radial-gradient(var(--glow-radius) circle at var(--x, 50%) var(--y, 50%),
+            var(--glow-color),
+            transparent 80%
+            /* 80% permite un borde difuminado suave */
+        );
 }
 
 .home-container {
